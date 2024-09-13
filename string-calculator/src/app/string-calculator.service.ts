@@ -11,6 +11,8 @@ export class StringCalculatorService {
     if(input === ''){
       return 0;
     }
-    return parseInt(input);
+    const inputNumbers = input.split(',');
+    const sum=inputNumbers.reduce((total,num)=>total + parseInt(num,10),0);
+    return sum;
   }
 }
