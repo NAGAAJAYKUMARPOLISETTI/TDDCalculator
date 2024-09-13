@@ -11,6 +11,6 @@ export class StringCalculatorService {
     if(input === ''){
       return 0;
     }
-    return 0;
+    return parseInt(input);
   }
 }

@@ -17,4 +17,8 @@ describe('StringCalculatorService', () => {
   it('should return 0 when the input is empty string',()=>{
     expect(service.addition("")).toEqual(0);
   })
+
+  it('should return input number when input contains only one number',()=>{
+    expect(service.addition("1")).toEqual(1);
+  })
 });
