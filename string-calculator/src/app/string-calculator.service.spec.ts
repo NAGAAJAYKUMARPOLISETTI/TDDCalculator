@@ -38,6 +38,10 @@ describe('StringCalculatorService', () => {
     expect(service.addition("//;\n1;2")).toEqual(3);
   })
 
+  it('should support custom delimiters with different length',()=>{
+    expect(service.addition("//[***]\n1***2***3")).toEqual(6);
+  })
+
   it('should through an exception when negative input values are provided',()=>{
     expect(()=>service.addition("1,-2,3")).toThrow(new Error("negative numbers not allowed: -2"));
   })
