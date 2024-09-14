@@ -29,4 +29,8 @@ describe('StringCalculatorService', () => {
   it('should return sum of multiple numbers',()=>{
     expect(service.addition("1,2,3,4")).toEqual(10);
   })
+
+  it('should return sum when input values are separated by new lines',()=>{
+    expect(service.addition("1\n2,3")).toEqual(6);
+  })
 });
