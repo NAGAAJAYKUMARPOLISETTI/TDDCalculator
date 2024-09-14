@@ -33,4 +33,8 @@ describe('StringCalculatorService', () => {
   it('should return sum when input values are separated by new lines',()=>{
     expect(service.addition("1\n2,3")).toEqual(6);
   })
+
+  it('should support the custom delimiters',()=>{
+    expect(service.addition("//;\n1;2")).toEqual(3);
+  })
 });

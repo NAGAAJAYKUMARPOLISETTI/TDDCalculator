@@ -11,7 +11,15 @@ export class StringCalculatorService {
     if(input === ''){
       return 0;
     }
-    const inputNumbers = input.replace(/\n/g,',').split(',');
+    let delimiter=',';
+    if(input.startsWith('//')){
+      const delimiterValues=input.match(/^\/\/(.)\n/);
+      if(delimiterValues){
+        delimiter=delimiterValues[1];
+        input=input.substring(4);
+      }
+    }
+    const inputNumbers = input.replace(/\n/g,delimiter).split(delimiter)
     const sum=inputNumbers.reduce((total,num)=>total + parseInt(num,10),0);
     return sum;
   }
