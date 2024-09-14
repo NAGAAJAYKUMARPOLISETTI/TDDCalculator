@@ -22,7 +22,7 @@ export class StringCalculatorService {
     const inputNumbers = input.replace(/\n/g,delimiter).split(delimiter);
     const negativeValues=inputNumbers.filter(num =>parseInt(num,10)<0);
     if(negativeValues.length> 0){
-      throw new Error(`negative numbers not allowed: ${negativeValues.join(',')}`);
+      throw new Error(`negative numbers not allowed: ${negativeValues.join(', ')}`);
     }
 
     const sum=inputNumbers.reduce((total,num)=>total + parseInt(num,10),0);
